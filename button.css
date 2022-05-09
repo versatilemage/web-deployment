@@ -1,0 +1,368 @@
+:root {
+    --clr-neon: rgb(255, 0, 0);
+    --clr-bg: hsl(323 21% 16%);
+    --clr-br: rgb(240, 100, 0);
+    --clr-bb: rgb(34, 10, 10);
+    --clr--aqua:rgb(0, 255, 238);
+    --clr-good: rgb(9, 172, 9);
+    --clr-delete: rgb(65, 61, 61);
+    --clr-bged: rgb(122, 0, 0);
+    --clr-blbtn: rgb(255, 0, 195);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+#input-el{
+    margin-top: -20em;
+    box-sizing: border-box;
+    padding: 1em 6em;
+    border: solid 2px red;
+    border-radius: 0.5em;
+}
+
+#header{
+    font-style: italic;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3em;
+    text-shadow: 0 0 0.2em rgb(10, 1, 1);
+}
+
+#contain {
+    background: rgb(92, 4, 4);
+    padding: 3em 6em;
+    margin-right: 4em;
+    margin-left: 22em;
+    border-radius: 1em;
+    transform: perspective(1em) rotateX(0.5deg) rotateY(0.2deg) rotateZ(10deg);
+    transition: 2s;
+    margin-top: -5em;
+    position: relative;
+}
+
+
+#input-btn{
+    font-size: 1em;
+    font-weight: 700;
+    color: var(--clr-blbtn);
+    text-decoration: none;
+    cursor: pointer;
+    border: var(--clr-blbtn) 5px solid;
+    border-radius: 0.25em;
+    padding: 0.25em 1em;
+    text-shadow: 0 0 0.5em var(--clr-blbtn),
+    0 0 0.1em white;
+    margin-top: 1em;
+    box-shadow: inset 0 0 0.5em 0 var(--clr-blbtn),
+    0 0 1em 0 var(--clr-blbtn);
+    position: relative;
+    margin-left: -1em;
+}
+
+#input-btn::before {
+    content: "";
+    position: absolute;
+    background: var(--clr-blbtn);
+    top: 120%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: perspective(1em) rotateX(30deg) scale(1, 0.5);
+    filter: blur(0.7em);
+    opacity: 0.7;
+    
+}
+
+#input-btn:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 0 1em 0.5em var(--clr-blbtn);
+    opacity: 0;
+    transition: opacity 500ms linear;
+}
+
+#input-btn:hover,
+#input-btn:focus{
+    color: var(--clr-bg);
+    
+}
+
+#input-btn:hover::before{
+    opacity: 1;
+}
+
+#input-btn:hover::after{
+    opacity: 1;
+}
+
+body{
+    min-height: 60em;
+    max-height: 100em;
+    display: grid;
+    grid-template-columns: 70% 30% ;
+    place-items: center;
+    background: var(--clr-bg);
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--clr-neon);
+    min-width: 80em;
+    max-width: 100em;
+}
+
+#contain {
+    animation-name: movements;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    z-index: 1;
+    transform-style: preserve-3d;
+}
+
+#contain:hover{
+    transform: rotateX(1deg);
+    background: var(--clr-bged);
+    animation-name: move;
+    box-shadow: 0 0 1em 0.5em var(--clr-neon);
+    color: var(--clr-bb);
+    text-shadow: 0.9 0.5 10em 10em var(--clr-bg);
+    border: solid 2px var(--clr-neon);
+    border-style: 3em ridge;
+}
+
+#input-btn1{
+    font-size: 1em;
+    font-weight: 700;
+    color: var(--clr-br);
+    text-decoration: none;
+    cursor: pointer;
+    border: var(--clr-br) 5px solid;
+    border-radius: 0.25em;
+    padding: 0.25em 1em;
+    text-shadow: 0 0 0.5em var(--clr-br),
+    0 0 0.1em white;
+    margin-top: -20em;
+    box-shadow: inset 0 0 0.5em 0 var(--clr-br),
+    0 0 1em 0 var(--clr-br);
+    position: relative;
+    margin-top: -22em;
+    margin-left: 1em;
+    margin-right: -1em;
+}
+
+#input-btn1::before {
+    content: "";
+    position: absolute;
+    background: var(--clr-br);
+    top: 120%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: perspective(1em) rotateX(30deg) scale(1, 0.5);
+    filter: blur(0.7em);
+    opacity: 0.7;
+    
+}
+
+#input-btn1:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 0 1em 0.5em var(--clr-br);
+    opacity: 0;
+    transition: opacity 500ms linear;
+}
+
+#input-btn1:hover,
+#input-btn1:focus{
+    color: var(--clr-bg);
+    
+}
+
+#input-btn1:hover::before{
+    opacity: 1;
+}
+
+#input-btn1:hover::after{
+    opacity: 1;
+}
+
+#input-btn2{
+    font-size: 1em;
+    font-weight: 700;
+    color: var(--clr-good);
+    text-decoration: none;
+    cursor: pointer;
+    border: var(--clr-good) 5px solid;
+    border-radius: 0.25em;
+    padding: 0.25em 1em;
+    text-shadow: 0 0 0.5em var(--clr-good),
+    0 0 0.1em white;
+    margin-top: -20em;
+    box-shadow: inset 0 0 0.5em 0 var(--clr-good),
+    0 0 1em 0 var(--clr-good);
+    position: relative;
+    margin-top: -22em;
+    margin-left: 2em;
+    margin-right: -1em;
+    background: rgba(255, 255, 255, 1);
+}
+
+#input-btn2::before {
+    content: "";
+    position: absolute;
+    background: var(--clr-good);
+    top: 120%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: perspective(1em) rotateX(30deg) scale(1, 0.5);
+    filter: blur(0.7em);
+    opacity: 0.7;
+    
+}
+
+#input-btn2:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 0 1em 0.5em var(--clr-good);
+    opacity: 0;
+    transition: opacity 500ms linear;
+}
+
+#input-btn2:hover,
+#input-btn2:focus{
+    color: var(--clr-bg);
+    
+}
+
+#input-btn2:hover::before{
+    opacity: 1;
+}
+
+#input-btn2:hover::after{
+    opacity: 1;
+}
+
+#input-btn3{
+    font-size: 1em;
+    font-weight: 700;
+    color: var(--clr-delete);
+    text-decoration: none;
+    cursor: pointer;
+    border: var(--clr-delete) 5px solid;
+    border-radius: 0.25em;
+    padding: 0.25em 1em;
+    text-shadow: 0 0 0.5em var(--clr-delete),
+    0 0 0.1em white;
+    margin-top: 1em;
+    box-shadow: inset 0 0 0.5em 0 var(--clr-delete),
+    0 0 1em 0 var(--clr-neon);
+    position: relative;
+    margin-left: -1em;
+}
+
+#input-btn3::before {
+    content: "";
+    position: absolute;
+    background: var(--clr-delete);
+    top: 120%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: perspective(1em) rotateX(30deg) scale(1, 0.5);
+    filter: blur(0.7em);
+    opacity: 0.7;
+    
+}
+
+#input-btn3:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 0 1em 0.5em var(--clr-delete);
+    opacity: 0;
+    transition: opacity 500ms linear;
+}
+
+#input-btn3:hover,
+#input-btn3:focus{
+    color: var(--clr-bg);
+    
+}
+
+#input-btn3:hover::before{
+    opacity: 1;
+}
+
+#input-btn3:hover::after{
+    opacity: 1;
+}
+
+#ul-l{
+    margin-top: 40em;
+    background: rgba(234, 105, 73, 0.3);
+    border: solid 1px rgb(234, 105, 73);
+    border-radius: 1em;
+    margin-left: -30em;
+
+}
+
+@keyframes movements {
+    0%{
+        transform: rotateZ(0deg) rotateX(0deg) rotateY(0deg);
+
+    }
+
+    50%{
+        transform: rotateZ(180deg) rotateX(180deg) rotateY(180deg);
+    }
+
+    100%{
+        transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+    }
+}
+
+@keyframes move {
+    0%{
+        transform: perspective(1em);
+    }
+
+    100%{
+        transform: perspective(1em);
+    }
+}
+
+ul{
+    margin-top: 1em;
+    list-style: none;
+    text-align: center;
+
+}
+
+li{
+    margin-top: 1em;
+    text-align: center;
+}
+
+a{
+    color: var(--clr--aqua);
+    margin-left: -2em;
+    margin-top: 4em;
+}
